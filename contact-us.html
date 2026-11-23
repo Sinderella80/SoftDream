@@ -1,0 +1,391 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Soft Dream | Contact Us</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+
+
+
+</head>
+<body>
+
+<header class="navbar">
+<div class="logo">
+    <a href="./index.php">
+        <img src="assets/images/logo2.png" alt="Logo">
+    </a>
+</div>
+        <nav>
+        <a href="./index.html">Home</a>
+        <a href="./shop.html">Shop</a>
+        <a href="./about-us.html">About Us</a>
+        <a href="./contact-us.html" class="active">Contact Us</a>
+    </nav>
+   
+<button class="login-btn" onclick="openLogin()">
+    Login
+</button>
+
+<!-- الخلفية -->
+<div class="login-modal" id="loginModal">
+
+    <!-- كرت اللوجين -->
+    <div class="login-box">
+
+        <!-- صورة -->
+        <div class="login-image">
+            <img src="assets/images/face1.png" alt="">
+        </div>
+
+
+<div class="login-form">
+
+
+    <span class="close-btn" onclick="closeLogin()">✕</span>
+
+    <!-- LOGIN -->
+    <div class="form-box active" id="loginForm">
+
+        <h1>Login</h1>
+
+        <div class="input-box">
+            <input type="email" placeholder="Email">
+        </div>
+
+        <div class="input-box">
+            <input type="password" placeholder="Password">
+        </div>
+
+        <button class="submit-btn">Login</button>
+
+        <div class="links">
+            <a href="#" onclick="showRegister()">Create account</a>
+            <a href="#" onclick="showForgot()">Forgot password?</a>
+        </div>
+    </div>
+
+
+
+        <!-- REGISTER -->
+
+ <div class="form-box" id="registerForm">
+
+<h1>Create Account</h1>
+
+<form action="register.html" method="POST">
+
+<div class="input-box">
+    <input type="text" name="fullname" placeholder="Full Name">
+</div>
+
+<div class="input-box">
+    <input type="email" name="email" placeholder="Email">
+</div>
+
+<div class="input-box">
+    <input type="password" name="password" placeholder="Password">
+</div>
+
+<button type="submit" class="submit-btn">
+    Create Account
+</button>
+
+</form>
+
+<div class="links">
+    <a href="#" onclick="showLogin()">Back to Login</a>
+</div>
+
+</div>
+
+    <!-- FORGOT -->
+    <div class="form-box" id="forgotForm">
+
+        <h1>Reset Password</h1>
+
+        <p class="reset-text">
+            Enter your email to receive reset link
+        </p>
+
+        <div class="input-box">
+            <input type="email" placeholder="Email">
+        </div>
+
+        <button class="submit-btn">
+            Send Reset Link
+        </button>
+
+        <div class="links">
+            <a href="#" onclick="showLogin()">Back to Login</a>
+        </div>
+
+    </div>
+
+</div>
+
+
+
+    <!-- FORGOT -->
+    <div class="form-box" id="forgotForm">
+
+        <h1>Reset Password</h1>
+
+        <p class="reset-text">
+            Enter your email to receive reset link
+        </p>
+
+        <div class="input-box">
+            <input type="email" placeholder="Email">
+        </div>
+
+        <button class="submit-btn">
+            Send Reset Link
+        </button>
+
+        <div class="links">
+            <a href="#" onclick="showLogin()">Back to Login</a>
+        </div>
+
+    </div>
+
+</div>
+
+</header>
+
+
+<section class="hero">
+    <div class="hero-text">
+        <a href="./index.php"class="tag" >WOMENS</a>
+        <h1>We’d Love To Hear<br>From You!</h1>
+        <p>Questions, Comments, Or just Want To say Hi? ♡
+        reach out using the form below. ♡ </p>
+
+    <p1> Let us help make your home moments softer, cozier, and more beautiful.♡</p1>
+    </div>
+        <img src="assets/images/dd294fc108f93d6f7b3dd6c89c0867d4.png" class="hero-imgee">
+
+</section>
+
+
+
+
+<section class="contact-section">
+
+
+    <h1 class="title">Our Details</h1>
+
+    <div class="contact-container">
+
+
+        
+    <!-- Left Side Form -->
+
+    <div class="contact-form">
+    <form>
+        <label>Name</label>
+        <input type="text" placeholder="Name">
+
+        <label>Email Address</label>
+        <input type="email" placeholder="Email Address">
+
+        <label>Message</label>
+        <textarea placeholder="Message" class="message"></textarea>
+        
+        <button type="submit">Submit</button>
+    </form>
+    </div>
+
+    
+    <!-- Right Side Details -->
+
+    <div class="map">
+        <iframe src="https://maps.google.com/maps?q=Damascus,Syria&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+
+    
+
+
+    <div class="social">
+        <i class="fab fa-facebook-f"></i>
+        <i class="fab fa-twitter"></i>
+        <i class="fab fa-instagram"></i>
+    </div>
+    </div>
+
+</div>
+
+
+
+</section>
+
+
+
+<footer class="footer">
+
+    <!-- Top Features -->
+    <div class="footer-features">
+
+        <div class="feature-box">
+            <i class="fa-solid fa-truck-fast"></i>
+            <div>
+                <h4>Free Shipping</h4>
+                <p>On orders over $50</p>
+            </div>
+        </div>
+
+        <div class="feature-box">
+            <i class="fa-solid fa-rotate-left"></i>
+            <div>
+                <h4>Easy Returns</h4>
+                <p>20-Day Return Policy</p>
+            </div>
+        </div>
+
+        <div class="feature-box">
+            <i class="fa-solid fa-shield-heart"></i>
+            <div>
+                <h4>Secure Payment</h4>
+                <p>Safe Checkout</p>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="line"></div>
+
+    <!-- Footer -->
+
+    <div class="footer-content">
+
+        <div class="footer-col">
+            <h2>Soft Dream</h2>
+            <p>Al-Hariqah, Damascus, Syria</p>
+        </div>
+
+        <div class="footer-col">
+            <h3>For Contact</h3>
+
+            <p>
+                <i class="fa-solid fa-phone"></i>
+                +963 994 914 238
+            </p>
+
+            <p>
+                <i class="fa-solid fa-envelope"></i>
+                info@softdreamshop.com
+            </p>
+
+        </div>
+
+        <div class="footer-col">
+
+            <h3>Quick Links</h3>
+
+           <a href="./index.html">Home</a>
+    <a href="./shop.html">Shop</a>
+    <a href="./about-us.html" >About Us</a>
+    <a href="./contact-us.html">Contact Us</a>
+
+        </div>
+
+        <div class="footer-col">
+
+            <h3>Customer Service</h3>
+
+            <a href="#">FAQ</a>
+            <a href="#">Shipping & Returns</a>
+            <a href="#">Privacy Policy</a>
+
+        <div class="social-media">
+    
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+
+                <a href="#"><i class="fab fa-instagram"></i></a>
+
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+
+        </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="copyright">
+        Soft Dream - All rights reserved 2026 | This template is made with
+        <i class="fa-solid fa-heart"></i> by Rama
+    </div>
+
+</footer>
+
+
+
+
+
+<div id="ai-chat-btn">
+    <img src="assets/images/file_00000000979871f4b5375330fcbfec02.png" alt="AI Chat">
+</div>
+
+<!-- نافذة الشات -->
+<div id="ai-chat-box">
+
+    <div class="chat-header">
+        <div>
+            <h3>Soft Dream AI ✨</h3>
+            <span>كيف بقدر ساعدك؟</span>
+        </div>
+
+        <button id="close-chat">✕</button>
+    </div>
+
+    <div class="chat-body" id="chat-body">
+
+        <div class="bot-message">
+            أهلاً 👋 أنا مساعد Soft Dream الذكي.
+
+            <div class="quick-questions">
+                <button onclick="sendQuestion('ما هي المقاسات المتوفرة؟')">
+                    المقاسات
+                </button>
+
+                <button onclick="sendQuestion('ما هي الألوان المتوفرة؟')">
+                    الألوان
+                </button>
+
+                <button onclick="sendQuestion('أحدث الموديلات')">
+                    الموديلات الجديدة
+                </button>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="chat-footer">
+        <input
+            type="text"
+            id="user-input"
+            placeholder="اكتبي سؤالك..."
+        >
+
+        <button id="send-btn">
+            إرسال
+        </button>
+    </div>
+
+
+
+</div>
+<script src="assets/js/script.js"></script>
+
+</body>
+</html>
+

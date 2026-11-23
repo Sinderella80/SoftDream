@@ -1,0 +1,42 @@
+<?php
+// 1. استدعاء ملف الاتصال بقاعدة البيانات
+include "assets/php/config.php"; // عدلي المسار حسب مكان الملف
+
+// 2. استقبال البيانات المرسلة من الفورم
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // استخدام mysqli_real_escape_string للحماية من الاختراقات البسيطة
+    $fullname = mysqli_real_escape_string($conn, $_POST['fullname']);
+    $email = mysqli_real_escape_string($conn, $_POST['email']);
+    $password = $_POST['password']; // لا نشفرها هنا مباشرة
+
+    // 3. التحقق من صحة البيانات (Validation)
+    if (empty($fullname) || empty($email) || empty($password)) {
+        echo "All fields are required.";
+        exit();
+    }
+
+    // 4. التحقق من عدم وجود مستخدم بنفس البريد الإلكتروني
+    $check_email = "SELECT email FROM users WHERE email = '$email'";
+    $result = mysqli_query($conn, $check_email);
+
+    if (mysqli_num_rows($result) > 0) {
+        echo "Email already exists.";
+    } else {
+        // 5. تشفير كلمة المرور (SECURITY IS CRITICAL)
+        // كلمة المرور لا يجب تخزينها كنص صريح في قاعدة البيانات.
+        // نستخدم password_hash لتشفير قوي لا يمكن عكسه.
+        $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+
+        // 6. تجهيز وكتابة الاستعلام (Query) لإدخال المستخدم
+        $sql = "INSERT INTO users (fullname, email, password) VALUES ('$fullname', '$email', '$hashed_password')";
+
+        if (mysqli_query($conn, $sql)) {
+            echo "User registered successfully! You can now <a href='index.php'>Login</a>.";
+        } else {
+            echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+        }
+    }
+}
+// 7. إغلاق الاتصال بقاعدة البيانات
+mysqli_close($conn);
+?>

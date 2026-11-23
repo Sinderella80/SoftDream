@@ -1,0 +1,458 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Soft Dream - Shop</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+
+</head>
+<body>
+
+<header class="header">
+  
+
+<div class="logo">
+    <a> 
+        <img src="assets/images/logo2.png" alt="Logo">
+    </a>
+</div>
+  <nav>
+    <a href="./index.html">Home</a>
+    <a href="./shop.html" class="active">Shop</a>
+    <a href="./about-us.html">About Us</a>
+    <a href="./contact-us.html">Contact Us</a>
+  </nav>
+  <div class="header-right">
+    <input type="text" id="searchInput" placeholder="Search pajamas...">
+    </div>
+
+
+<button class="login-btn" onclick="openLogin()">
+    Login
+</button>
+
+<!-- الخلفية -->
+<div class="login-modal" id="loginModal">
+
+    <!-- كرت اللوجين -->
+    <div class="login-box">
+
+        <!-- صورة -->
+        <div class="login-image">
+            <img src="assets/images/face1.png" alt="">
+        </div>
+
+
+<div class="login-form">
+
+
+    <span class="close-btn" onclick="closeLogin()">✕</span>
+
+    <!-- LOGIN -->
+    <div class="form-box active" id="loginForm">
+
+        <h1>Login</h1>
+
+        <div class="input-box">
+            <input type="email" placeholder="Email">
+        </div>
+
+        <div class="input-box">
+            <input type="password" placeholder="Password">
+        </div>
+
+        <button class="submit-btn">Login</button>
+
+        <div class="links">
+            <a href="#" onclick="showRegister()">Create account</a>
+            <a href="#" onclick="showForgot()">Forgot password?</a>
+        </div>
+    </div>
+
+    
+
+        <!-- REGISTER -->
+
+ <div class="form-box" id="registerForm">
+
+<h1>Create Account</h1>
+
+<form action="register.html" method="POST">
+
+<div class="input-box">
+    <input type="text" name="fullname" placeholder="Full Name">
+</div>
+
+<div class="input-box">
+    <input type="email" name="email" placeholder="Email">
+</div>
+
+<div class="input-box">
+    <input type="password" name="password" placeholder="Password">
+</div>
+
+<button type="submit" class="submit-btn">
+    Create Account
+</button>
+
+</form>
+
+<div class="links">
+    <a href="#" onclick="showLogin()">Back to Login</a>
+</div>
+
+</div>
+
+    <!-- FORGOT -->
+    <div class="form-box" id="forgotForm">
+
+        <h1>Reset Password</h1>
+
+        <p class="reset-text">
+            Enter your email to receive reset link
+        </p>
+
+        <div class="input-box">
+            <input type="email" placeholder="Email">
+        </div>
+
+        <button class="submit-btn">
+            Send Reset Link
+        </button>
+
+        <div class="links">
+            <a href="#" onclick="showLogin()">Back to Login</a>
+        </div>
+
+    </div>
+
+</div>
+
+
+
+    <!-- FORGOT -->
+    <div class="form-box" id="forgotForm">
+
+        <h1>Reset Password</h1>
+
+        <p class="reset-text">
+            Enter your email to receive reset link
+        </p>
+
+        <div class="input-box">
+            <input type="email" placeholder="Email">
+        </div>
+
+        <button class="submit-btn">
+            Send Reset Link
+        </button>
+
+        <div class="links">
+            <a href="#" onclick="showLogin()">Back to Login</a>
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
+</header>
+
+
+
+
+
+
+
+<div class="container">
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <h3>Categories</h3>
+    <ul>
+      <li>Pajama Sets</li>
+      <li>Nightgowns</li>
+      <li>Loungewear</li>
+    </ul>
+
+    <h3>Price</h3>
+    <input type="range" min="40" max="70" value="60" id="priceRange">
+    <p>Up to: $<span id="priceValue">60</span></p>
+
+    <h3>Colors</h3>
+    <div class="colors">
+      <span class="color rose"></span>
+      <span class="color pink active"></span>
+      <span class="color ivory"></span>
+      <span class="color lilac"></span>
+    </div>
+  </aside>
+
+  <!-- Main Shop -->
+  <main class="shop">
+    <h1>Shop</h1>
+
+    <div class="products" id="productList">
+      <!-- Product Card -->
+      <div class="product" data-price="58">
+        <span class="hot">HOT</span>
+        <img src="assets/images/pic1.jpg" alt="">
+        <h4>Featherzen Set</h4>
+        <p class="price">$58.00</p>
+        <button>Add to cart</button>
+      </div>
+
+      <div class="product" data-price="52">
+        <span class="hot">HOT</span>
+        <img src="assets/images/pic2.jpg" alt="">
+        <h4>Petitfleur Set</h4>
+        <p class="price">$52.00</p>
+        <button>Add to cart</button>
+      </div>
+
+      <div class="product" data-price="55">
+        <span class="hot">HOT</span>
+        <img src="assets/images/pic3.jpg" alt="">
+        <h4>Predream Set</h4>
+        <p class="price">$55.00</p>
+        <button>Add to cart</button>
+      </div>
+
+      <div class="product" data-price="50">
+        <span class="hot">HOT</span>
+        <img src="assets/images/pic4.jpg" alt="">
+        <h4>Perfloom Set</h4>
+        <p class="price">$50.00</p>
+        <button>Add to cart</button>
+      </div>
+
+      <div class="product" data-price="59">
+        <span class="hot">HOT</span>
+        <img src="assets/images/pic5.jpg" alt="">
+        <h4>Everfawn Set</h4>
+        <p class="price">$59.00</p>
+        <button>Add to cart</button>
+      </div>
+
+      <div class="product" data-price="60">
+        <span class="hot">HOT</span>
+        <img src="assets/images/pic6.jpg" alt="">
+        <h4>Proflora Set</h4>
+        <p class="price">$60.00</p>
+        <button>Add to cart</button>
+      </div>
+
+       <div class="product" data-price="60">
+        <span class="hot">HOT</span>
+        <img src="assets/images/pic7.jpg" alt="">
+        <h4>Proflora Set</h4>
+        <p class="price">$60.00</p>
+        <button>Add to cart</button>
+      </div>
+
+<div class="product" data-price="50">
+        <span class="hot">HOT</span>
+        <img src="assets/images/pic8.jpg" alt="">
+        <h4>Perfloom Set</h4>
+        <p class="price">$50.00</p>
+        <button>Add to cart</button>
+      </div>
+
+
+       <div class="product" data-price="60">
+        <span class="hot">HOT</span>
+        <img src="assets/images/pic9.jpg" alt="">
+        <h4>Proflora Set</h4>
+        <p class="price">$60.00</p>
+        <button>Add to cart</button>
+      </div>
+
+    </div>
+  </main>
+
+</div>
+
+
+
+
+
+
+<footer class="footer">
+
+    <!-- Top Features -->
+    <div class="footer-features">
+
+        <div class="feature-box">
+            <i class="fa-solid fa-truck-fast"></i>
+            <div>
+                <h4>Free Shipping</h4>
+                <p>On orders over $50</p>
+            </div>
+        </div>
+
+        <div class="feature-box">
+            <i class="fa-solid fa-rotate-left"></i>
+            <div>
+                <h4>Easy Returns</h4>
+                <p>20-Day Return Policy</p>
+            </div>
+        </div>
+
+        <div class="feature-box">
+            <i class="fa-solid fa-shield-heart"></i>
+            <div>
+                <h4>Secure Payment</h4>
+                <p>Safe Checkout</p>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="line"></div>
+
+    <!-- Footer -->
+
+    <div class="footer-content">
+
+        <div class="footer-col">
+            <h2>Soft Dream</h2>
+            <p>Al-Hariqah, Damascus, Syria</p>
+        </div>
+
+        <div class="footer-col">
+            <h3>For Contact</h3>
+
+            <p>
+                <i class="fa-solid fa-phone"></i>
+                +963 994 914 238
+            </p>
+
+            <p>
+                <i class="fa-solid fa-envelope"></i>
+                info@softdreamshop.com
+            </p>
+
+        </div>
+
+        <div class="footer-col">
+
+            <h3>Quick Links</h3>
+
+           <a href="./index.html">Home</a>
+    <a href="./shop.html">Shop</a>
+    <a href="./about-us.html" >About Us</a>
+    <a href="./contact-us.html">Contact Us</a>
+
+        </div>
+
+        <div class="footer-col">
+
+            <h3>Customer Service</h3>
+
+            <a href="#">FAQ</a>
+            <a href="#">Shipping & Returns</a>
+            <a href="#">Privacy Policy</a>
+
+        <div class="social-media">
+    
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+
+                <a href="#"><i class="fab fa-instagram"></i></a>
+
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+
+        </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="copyright">
+        Soft Dream - All rights reserved 2026 | This template is made with
+        <i class="fa-solid fa-heart"></i> by Rama
+    </div>
+
+</footer>
+
+
+
+
+
+
+
+
+
+
+<div id="ai-chat-btn">
+    <img src="assets/images/file_00000000979871f4b5375330fcbfec02.png" alt="AI Chat">
+</div>
+
+<!-- نافذة الشات -->
+<div id="ai-chat-box">
+
+    <div class="chat-header">
+        <div>
+            <h3>Soft Dream AI ✨</h3>
+            <span>كيف بقدر ساعدك؟</span>
+        </div>
+
+        <button id="close-chat">✕</button>
+    </div>
+
+    <div class="chat-body" id="chat-body">
+
+        <div class="bot-message">
+            أهلاً 👋 أنا مساعد Soft Dream الذكي.
+
+            <div class="quick-questions">
+                <button onclick="sendQuestion('ما هي المقاسات المتوفرة؟')">
+                    المقاسات
+                </button>
+
+                <button onclick="sendQuestion('ما هي الألوان المتوفرة؟')">
+                    الألوان
+                </button>
+
+                <button onclick="sendQuestion('أحدث الموديلات')">
+                    الموديلات الجديدة
+                </button>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="chat-footer">
+        <input
+            type="text"
+            id="user-input"
+            placeholder="اكتبي سؤالك..."
+        >
+
+        <button id="send-btn">
+            إرسال
+        </button>
+    </div>
+
+
+
+
+</div>
+<script src="assets/js/script.js"></script>
+
+
+</body>
+</html>
+
+
+
