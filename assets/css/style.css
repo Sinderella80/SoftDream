@@ -1,0 +1,1575 @@
+
+/* 1. Global Styles - الإعدادات العامة */
+:root {
+    --primary-pink: #f878a7;
+    --dark-pink: #e91e63;
+    --light-pink: #ffeaf2;
+    --bg-color: #fff6f9;
+    --text-color: #444;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    
+}
+
+/* 2. Navigation - شريط التنقل */
+.navbar, .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 60px;
+    background: linear-gradient(90deg, #ffd6e6, var(--light-pink));
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.logo img {
+    height: 60px;
+    transition: transform 0.3s ease;
+}
+
+
+
+nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #555;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+nav a.active, nav a:hover {
+    color: var(--dark-pink);
+    border-bottom: 2px solid var(--dark-pink);
+    padding-bottom: 5px;
+}
+
+
+
+
+/* 3. Hero Section - قسم الواجهة */
+
+.hero {
+    display: flex;
+    padding: 60px;
+    background: linear-gradient(to right, #ffdce6, #ffeef3);
+    align-items: center;
+    justify-content: space-between;
+}
+
+.hero-text {
+    width: 50%;
+     position: relative;
+    top: -50px;
+    font-size: 0.8em;
+
+}
+
+.hero-text h1 {
+    font-size: 48px;
+    color: #181717;
+    margin-bottom: 20px;
+}
+
+.hero-text p {
+    font-size: 16px;
+    line-height: 4;
+padding-bottom: 10px;
+
+}
+
+.hero-text2 p {
+    font-size: 16px;
+    line-height: 3;
+padding-bottom: 10px;
+
+}
+
+.hero-image img {
+    width: 100%;
+    border-radius: 20px;
+    max-width: 800px;
+    height: auto;
+    
+}
+
+.hero-image{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+
+
+}
+
+
+.hero h1 {
+    font-family: 'Playfair Display';
+    font-size: 46px;
+}
+
+
+.shop-btn {
+    display: inline-block;
+    background: var(--dark-pink);
+    color: white;
+    padding: 15px 45px;
+    border: none;
+    border-radius: 30px;
+    font-size: 15px;
+    cursor: pointer;
+    margin-top: 30px;
+    text-decoration: none;
+}
+.shop-btn:hover {
+    background: var(--primary-pink);
+}
+
+
+
+/* 4. Products Grid - شبكة المنتجات */
+.hot-picks {
+    padding: 60px 10%;
+   
+}
+
+.products{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 30px;
+}
+
+.hot-picks-title {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: pulse-red 2s infinite;
+}
+
+.hot-picks-title::before, .hot-picks-title::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: #ccc;
+    margin: 0 20px;
+    max-width: 150px;
+}
+
+/* توزيع الكروت */
+ .products, #productList{
+    display: grid;
+    grid-template-columns:(auto-fit,minmax(280px, 1fr));
+    gap: 30px;
+    padding: 40px 10%;
+}
+
+
+.hot {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: linear-gradient(45deg, #f06292, #e91e63); /* تدرج زهري احترافي */
+    color: white;
+    font-size: 11px;
+    font-weight: 800; /* خط عريض */
+    padding: 5px 15px;
+    border-radius: 50px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 10px rgba(233, 30, 99, 0.3);
+    overflow: hidden; /* ضروري لقص اللمعة */
+    z-index: 2;
+}
+
+/* إضافة تأثير اللمعة المتحركة */
+.hot:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        120deg, 
+        transparent, 
+        rgba(255, 255, 255, 0.6), 
+        transparent
+    );
+    animation: shine-effect 2.5s infinite; /* سرعة اللمعة */
+}
+
+/* حركة اللمعة */
+@keyframes shine-effect {
+    0% {
+        left: -150%;
+    }
+    50% {
+        left: 150%;
+    }
+    100% {
+        left: 150%;
+    }
+}
+
+/* تأثير نبض خفيف لجذب الانتباه (اختياري) */
+.hot {
+    animation: pulse-red 2s infinite;
+}
+
+@keyframes pulse-red {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+
+/* 5. The Card - تصميم الكارت والحركة */
+.card, .product {
+    background: white;
+    border-radius: 20px;
+    padding: 20px;
+    position: relative;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+}
+
+/* تأثير الحركة عند المس (Hover) */
+.card:hover, .product:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 15px 30px rgba(233, 30, 99, 0.15);
+}
+
+.card img, .product img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
+
+.card h3, .product h4 {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.price {
+    color: var(--dark-pink);
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.card button, .product button {
+    background: var(--dark-pink);
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.card button:hover, .product button:hover {
+    background:  var(--primary-pink) ;
+}
+
+
+
+/* 8. Shop Layout - صفحة المتجر */
+
+.container{
+  display: flex;
+ justify-content: space-between;
+  gap: 40px;
+  padding: 40px 60px;
+  align-items: flex-start;
+}
+
+
+.sidebar {
+  width: 260px;
+  background: #fff;
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+position: sticky;
+top:30px;
+margin-left: 20px;
+transition: .4s;
+}
+.sidebar:hover{
+    transition: translateY(-5px);
+}
+
+.sidebar h3 { color: var(--dark-pink); margin: 20px 0 10px; }
+.sidebar ul { list-style: none; }
+.sidebar li {
+    list-style: none;
+    padding: 12px 15px;
+    border-radius: 12px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    transition: .3s;
+    display: -webkit-inline-flex;
+    align-items: center;
+    gap: 10px;
+
+}
+.sidebar li:hover{
+    background: #ffe7f1;
+    color: #e75380;
+    transform: translateX(8px);
+
+}
+.sidebar li.acticve{
+    background: #e75480;
+    color: white;
+}
+
+.colors { display: flex; gap: 10px; margin-top: 10px; }
+.color { width: 25px; height: 25px; border-radius: 50%; cursor: pointer; border: 2px solid #ddd; }
+.rose { background: #f7b2c4; } .pink { background: #e75480; } .ivory { background: #fff1e6; }
+.color.active {border: 2px solid #e75480;}
+
+
+
+
+
+
+/* 9. Contact Page */
+
+
+
+.contact-form{
+    width: 100%;
+    max-width: 600px;
+    position: relative;
+    top: -30px;
+}
+
+.contact-form form{
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form label{
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #ce6680;
+}
+
+.contact-form input,
+.contact-formtextarea{
+   
+    padding: 18px 20px;
+    margin-bottom: 25px;
+    border: 1px solid #eee;
+    border-radius: 18px;
+    outline: none;
+    font-size: 18px;
+    background: #fff;
+    box-shadow: 0 2px 12px rgba(0,0,0,.05);
+    transition: .3s;
+}
+
+.contact-formtextarea{
+    width: 300px;
+    height: 160px;
+    resize: none;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus{
+
+    border-color:#ff6b9a ;
+    box-shadow: 0 0 15px rgb(255, 107, 154, 25);
+    transform: translate Y(-2px);
+}
+
+
+.contact-form button{
+    width: 250px;
+    height:60px;
+    padding: 15px;
+    border: none;
+    border-radius: 50px;
+    background: linear-gradient(90deg,#ff6b9a,#ff4f87);
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .3s;
+    margin-top: 20px;
+
+}
+
+.contact-form button:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(255,79,135,.35);
+}
+
+.contact-form .message{
+    width: 100%;
+    height: 220px;
+outline: none !important;
+}
+
+
+
+.contact {
+    display: flex;
+    padding: 60px 10%;
+    gap: 50px;
+}
+
+form { width: 60%; display: flex; flex-direction: column; gap: 15px; }
+
+
+.details iframe {
+    width: 100%;
+    border-radius:20px;
+    height: 250px;
+    border: none;
+    margin-top: 20px;
+    height: 200px;
+    
+}
+
+
+
+.tag {
+    background:var(--dark-pink) ;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 15px;
+    position: relative;
+    top: -20px;
+        text-decoration: none;
+
+
+   
+}
+.tag:hover {
+    background: var(--primary-pink);
+}
+
+
+
+/* هي للمسافة بصفحة about-us*/
+.subtitle {
+    font-size: 15px;
+    color: #777;
+    margin-bottom: 40px;
+}
+
+/* Shop */
+.shop {
+  flex: 1;
+}
+
+.shop h1 {
+  margin-bottom: 20px;
+  color: #e75480;
+}
+
+
+.feature-card {
+  flex: 1;
+  background: #fff;
+  border-radius: 20px;
+  padding:25px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(231,84,128,0.15);
+  transition: 0.3s;
+}
+
+.feature-card:hover {
+  transform: translateY(-8px);
+}
+
+.feature-card .icon {
+  width: 50px;
+  height: 50px;
+  margin: 0 auto 10px;
+  background: #ffe4ee;
+  border-radius: 50%;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #e75480;
+}
+
+.feature-card h4 {
+  color: #e75480;
+  margin-bottom: 8px;
+}
+
+/* NEWSLETTER */
+.newsletter {
+  display: flex;
+  align-items: center;
+  background: linear-gradient(90deg, #ffe4ee, #fff5f9);
+  border-radius: 25px;
+  margin: 40px;
+  padding: 30px;
+}
+
+.newsletter-text {
+  flex: 1;
+}
+
+.newsletter-text h2 {
+  font-size: 32px;
+}
+
+.newsletter-text span {
+  color: #e75480;
+}
+
+.newsletter-form {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.newsletter-form input {
+  flex: 1;
+  padding: 12px;
+  border-radius: 25px;
+  border: 1px solid #f3b3c8;
+  outline: none;
+}
+
+.newsletter-form button {
+  padding: 8px 20px;
+  border-radius: 25px;
+  border: none;
+  background: linear-gradient(90deg, #e75480, #ff8fb3);
+  color: white;
+  cursor: pointer;
+  align-self: center;
+  width: 180px;
+  margin-top: 30px;
+  
+
+}
+
+.newsletter-img img {
+  width: 260px;
+  border-radius: 20px;
+  margin-left: 30px;
+}
+
+
+
+/* FEATURES */
+
+
+
+.features {
+    display:flex;
+    justify-content: space-around;
+    padding: 50px 50px;
+    background: #ffeeee; 
+ 
+}
+
+
+.feature {
+    text-align: center;
+    width: 30%;
+    background: #ffcfde;
+    padding: 30px;
+    border-radius:15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+
+.feature h3 {
+    color: #e96a9a;
+    margin-bottom: 10px;
+}
+
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+ 
+  .newsletter {
+    flex-direction: column;
+  }
+
+
+
+  .newsletter-img{
+    margin: 20px 0 0;
+  }
+}
+
+
+.newsletter-form button {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.newsletter-form button:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 8px 20px rgba(231,84,128,0.35);
+}
+
+
+
+
+.newsletter-img img {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.newsletter-img img:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 35px rgba(231,84,128,0.25);
+}
+
+
+
+
+
+
+.about-softdream {
+    background: linear-gradient(to bottom, #fff5f8, #fde4ec);
+    padding: 80px 60px;
+    font-family: "Arial", sans-serif;
+}
+
+/* Title */
+.title {
+    text-align: center;
+    font-size: 42px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.title span {
+    color: #af2447;
+    font-style: italic;
+    transition: 0.3s ease;
+}
+.title span:hover {
+  color: #d86388;
+  transform: scale(1.1);
+}
+
+
+
+/* Subtitle */
+.subtitle {
+    max-width: 850px;
+    margin: 0 auto 60px;
+    text-align: center;
+    color: #777;
+    line-height: 1.8;
+    font-size: 16px;
+}
+
+/* Layout */
+.about-container {
+    display: flex;
+    gap: 60px;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Image Box */
+
+.image-box {
+    width: 150%;
+    border-radius: 40px;
+    overflow: hidden;
+    box-shadow: 0 18px 45px rgba(229, 107, 140, 0.25);
+    transition: all 0.4s ease;
+
+}
+.image-box img {
+    width: 100%;
+    display: block;
+    transition: transform 0.6s ease;
+}
+/* Image Hover */
+.image-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 60px rgba(229, 107, 140, 0.35);
+}
+
+.image-box:hover img {
+    transform: scale(1.08);
+}
+
+
+
+.text-group {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;   /* ⭐ المسافة بين النصين */
+      margin-bottom: 150px;
+      text-transform: capitalize;
+
+
+}
+
+.text-group p {
+    margin: 0;
+    font-size:18px;
+    line-height: 1.9;
+    color: #292626;   /* النص الأسود */
+}
+
+/* كلمة Soft Dream */
+.text-group b {
+    color: #e56b8c;
+    font-weight: 600;
+}
+
+.contact-card {
+  margin-bottom: 20px;
+  width: 520px;
+  border-radius:25px;
+  overflow: hidden;
+  position: relative;
+  padding: 30px;
+  color: #1f1e1e;
+
+  /* خلفية خريطة */
+  background-image: url("https://maps.gstatic.com/tactile/basepage/pegman_sherlock.png");
+  background-size: cover;
+  background-position: center;
+
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+.contact-card:hover  {
+    transform: scale(1.08);
+}
+
+/* طبقة وردي شفافة فوق الخلفية */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 182, 193, 0.85),
+    rgba(255, 192, 203, 0.6)
+  );
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+}
+
+h2 {
+  margin-bottom: 20px;
+  color: #c94f7c;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 14px;
+  font-size: 16px;
+}
+
+.icon {
+  width: 36px;
+  height: 36px;
+  background: #ff6fa0;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin-right: 12px;
+  font-size: 18px;
+}
+
+
+
+
+
+
+
+
+
+
+
+.feature:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+
+.contact-section {
+  width: 85%;
+  margin: auto;
+}
+
+
+
+
+.title {
+    padding: 60px 10%;
+}
+
+.title {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   color: #ff6b9a;
+}
+
+.title::before, .title::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: #ccc;
+    margin: 0 20px;
+    max-width: 150px;
+}
+
+
+
+.contact-container{
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+  align-items: flex-start;
+}
+
+
+/* Right Details */
+.details-box {
+  flex: 1;
+}
+
+.details-box h3 {
+  margin-bottom: 25px;
+  font-size: 22px;
+  color: #333;
+}
+
+
+
+.social i{
+  width: 50px;
+  height: 50px;
+  background: #ff6b9a;
+  color: white;
+  display: inline-flex;
+  align-items: center;
+  justify-content:center;
+  border-radius: 50%;
+  margin-right:40px;
+  cursor: pointer;
+  transition: 0.3s;
+  position: relative;
+  top: 30px;
+  left: 150px;
+margin-top: 50px;
+}
+
+
+.social i:hover {
+  background: #e05582;
+}
+
+/* Responsive */
+@media(max-width: 900px) {
+  .contact-container {
+    flex-direction: column;
+  }
+}
+
+
+.info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  transition: 0.3s;
+}
+
+.info:hover {
+  transform: translateX(8px);
+}
+
+.info i {
+  width: 50px;
+  height: 50px;
+  background: #ff6b9a;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin-right: 15px;
+  font-size: 18px;
+  transition: 0.4s;
+}
+
+.info:hover i {
+  background: #e05582;
+  transform: rotate(10deg) scale(1.1);
+}
+
+.map iframe {
+  border-radius:15px;
+  margin-top: 20px;
+   width:600px;
+  height:450px;
+
+}
+
+
+
+
+
+
+
+
+
+
+#chatbot-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-family: 'Poppins', sans-serif;
+    z-index: 9999;
+}
+
+/* Button */
+#chatbot-button {
+    background: #ff6fa5;
+    color: white;
+    font-size: 24px;
+    padding: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* Chat box */
+#chatbot-box {
+    display: none;
+    width: 300px;
+    height: 400px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+/* Header */
+#chatbot-header {
+    background: #ff6fa5;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Messages */
+#chatbot-messages {
+    padding: 10px;
+    height: 260px;
+    overflow-y: auto;
+    font-size: 14px;
+}
+
+/* Input */
+#chatbot-input-area {
+    display: flex;
+    border-top: 1px solid #ddd;
+}
+
+#chatbot-input {
+    flex: 1;
+    border: none;
+    padding: 10px;
+}
+
+#send-btn {
+    background: #ff6fa5;
+    border: none;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+}
+
+/* Messages style */
+.user-msg {
+    text-align: right;
+    margin: 5px 0;
+}
+
+.bot-msg {
+    text-align: left;
+    margin: 5px 0;
+    color: #555;
+}
+
+
+
+
+
+/* زر اللوجين */
+.login-btn{
+    padding:12px 35px;
+    border:none;
+    border-radius:30px;
+    background:linear-gradient(45deg,#ff4f9a,#ff7eb3);
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+    transition:0.3s;
+    font-weight:bold;
+}
+
+.login-btn:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 20px rgba(255,105,180,.5);
+}
+
+/* المودال */
+.login-modal{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.5);
+    backdrop-filter:blur(6px);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    opacity:0;
+    visibility:hidden;
+    transition:0.4s;
+    z-index:999;
+}
+
+/* عند الفتح */
+.login-modal.active{
+    opacity:1;
+    visibility:visible;
+}
+
+/* الصندوق */
+.login-box{
+    width:850px;
+    min-height:600px;
+    height:auto;
+    background:rgba(255,255,255,0.15);
+    border-radius:30px;
+    overflow:hidden;
+    display:flex;
+
+    backdrop-filter:blur(15px);
+
+    transform:translateY(50px);
+    transition:0.5s;
+    box-shadow:0 20px 50px rgba(0,0,0,0.3);
+}
+
+/* حركة الدخول */
+.login-modal.active .login-box{
+    transform:translateY(0);
+}
+
+/* الصورة */
+.login-image{
+    width:45%;
+    height:100%;
+}
+
+.login-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+/* الفورم */
+.login-form{
+    width:55%;
+    padding:60px;
+    position:relative;
+    background:#ffe4ec;
+}
+
+.login-form h1{
+    color:#d63384;
+    margin-bottom:40px;
+    font-size:45px;
+}
+
+/* الانبوت */
+.input-box{
+    margin-bottom:25px;
+}
+
+.input-box input{
+    width:100%;
+    border:none;
+    border-bottom:2px solid #d63384;
+    background:transparent;
+    padding:10px;
+    font-size:16px;
+    outline:none;
+}
+
+/* زر الدخول */
+.submit-btn{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:30px;
+
+    background:linear-gradient(45deg,#ff4f9a,#ff85b3);
+
+    color:white;
+    font-size:18px;
+    cursor:pointer;
+
+    transition:0.3s;
+}
+
+.submit-btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 25px rgba(255,105,180,.4);
+}
+
+/* الروابط */
+.links{
+    display:flex;
+    justify-content:space-between;
+    margin-top:20px;
+}
+
+.links a{
+    color:#c2185b;
+    text-decoration:none;
+}
+
+/* زر الاغلاق */
+.close-btn{
+    position:absolute;
+    top:20px;
+    right:25px;
+    font-size:25px;
+    cursor:pointer;
+    color:#d63384;
+}
+
+
+.form-box{
+    display: none;
+}
+.form-box.active{
+    display: block;
+    animation:fade .4s;
+}
+
+@keyframes fade{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.reset-text{
+    color:#a05278;
+    margin-bottom:20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+#ai-chat-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 10px;
+    width:150px;
+    height: 150px;
+    cursor: pointer;
+    z-index: 99999;
+    transition: 0.3s;
+    animation: pulse-red 2s infinite;
+
+}
+
+#ai-chat-btn:hover {
+    transform: scale(1.1);
+}
+
+#ai-chat-btn img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+#ai-chat-box {
+    position: fixed;
+    bottom: 120px;
+    right: 20px;
+    width: 360px;
+    height: 520px;
+    background: white;
+    border-radius: 25px;
+    box-shadow: 0 15px 50px rgba(0,0,0,0.15);
+    overflow: hidden;
+    display: none;
+    flex-direction: column;
+    z-index: 99999;
+}
+
+.chat-header {
+    background: linear-gradient(135deg, #ff4fa1, #ff8bc2);
+    color: white;
+    padding: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chat-header h3 {
+    margin: 0;
+}
+
+#close-chat {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.chat-body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 15px;
+    background: #fff7fb;
+}
+
+.bot-message,
+.user-message {
+    max-width: 80%;
+    padding: 12px 15px;
+    margin-bottom: 12px;
+    border-radius: 18px;
+}
+
+.bot-message {
+    background: white;
+    color: #444;
+}
+
+.user-message {
+    background: #ff4fa1;
+    color: white;
+    margin-left: auto;
+}
+
+.chat-footer {
+    display: flex;
+    gap: 10px;
+    padding: 15px;
+    border-top: 1px solid #eee;
+}
+
+.chat-footer input {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    outline: none;
+}
+
+.chat-footer button {
+    background: #ff4fa1;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    padding: 12px 18px;
+    cursor: pointer;
+}
+
+.quick-questions {
+    margin-top: 15px;
+}
+
+.quick-questions button {
+    border: none;
+    background: #ffd6e8;
+    color: #ff4fa1;
+    padding: 8px 12px;
+    border-radius: 20px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+.footer{
+
+    background:#ffefef;
+
+    margin-top:80px;    
+
+border-top:1px solid #f1a2c7;
+}
+
+/******** FEATURES ********/
+
+.footer-features{
+
+    display:flex;
+
+    justify-content:space-around;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+
+    padding:45px 8%;
+}
+
+.feature-box{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+}
+
+.feature-box i{
+
+    font-size:34px;
+
+    color:#ff4f9a;
+}
+
+.feature-box h4{
+
+    color:#444;
+
+    font-size:17px;
+}
+
+.feature-box p{
+
+    color:#888;
+
+    font-size:14px;
+}
+
+.line{
+
+    width:100%;
+
+    height:1px;
+
+    background: #f1a2c7;
+
+}
+
+/******** CONTENT ********/
+
+.footer-content{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+
+    gap:40px;
+
+    padding:55px 8%;
+}
+
+.footer-col h2{
+
+    color:#ff4f9a;
+
+    margin-bottom:18px;
+
+    font-size:28px;
+}
+
+.footer-col h3{
+
+    color:#ff4f9a;
+
+    margin-bottom:18px;
+
+    font-size:18px;
+}
+
+.footer-col p{
+
+    color:#666;
+
+    margin-bottom:12px;
+
+    line-height:25px;
+}
+
+.footer-col a{
+
+    display:block;
+
+    text-decoration:none;
+
+    color:#666;
+
+    margin-bottom:12px;
+
+    transition:.3s;
+}
+
+.footer-col a:hover{
+
+    color:#ff4f9a;
+
+    padding-left:5px;
+}
+
+.footer-col p i{
+
+    color:#ff4f9a;
+
+    margin-right:8px;
+}
+
+.social-media{
+
+    margin-top:20px;
+}
+
+.social-media a{
+
+    display:inline-flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    width:42px;
+
+    height:42px;
+
+    border-radius:50%;
+
+    background:#ff4f9a;
+
+    color:#fff;
+
+    margin-right:10px;
+
+    transition:.3s;
+}
+
+.social-media a:hover{
+
+    background:#ff2a80;
+
+    transform:translateY(-5px);
+}
+
+.copyright{
+
+    background:#ffbfd7;
+
+    text-align:center;
+
+    padding:18px;
+
+    color:#555;
+
+    font-size:14px;
+}
+
+.copyright i{
+
+    color:#ff2a80;
+}
+
+/******** RESPONSIVE ********/
+
+@media(max-width:768px){
+
+.footer-features{
+
+    flex-direction:column;
+
+    gap:30px;
+}
+
+.feature-box{
+
+    justify-content:center;
+}
+
+.footer-content{
+
+    text-align:center;
+}
+
+.footer-col a:hover{
+
+    padding-left:0;
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
